@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "silent_assassin:blocks/block_stone_blue"
+	}
+}

@@ -1,0 +1,99 @@
+---- Minecraft Crash Report ----
+// I bet Cylons wouldn't have this problem.
+
+Time: 11/25/22 5:34 PM
+Description: Ticking entity
+
+java.lang.NullPointerException: Ticking entity
+	at com.Hileb.silent_assassin.otherMods.SlashBlade.SA.Entity.EntityRain.onImpact(EntityRain.java:39)
+	at net.minecraft.entity.projectile.EntityThrowable.onUpdate(EntityThrowable.java:265)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2171)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:871)
+	at net.minecraft.world.World.updateEntity(World.java:2130)
+	at net.minecraft.world.World.updateEntities(World.java:1931)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:643)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:842)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:743)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:592)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.Hileb.silent_assassin.otherMods.SlashBlade.SA.Entity.EntityRain.onImpact(EntityRain.java:39)
+	at net.minecraft.entity.projectile.EntityThrowable.onUpdate(EntityThrowable.java:265)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2171)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:871)
+	at net.minecraft.world.World.updateEntity(World.java:2130)
+
+-- Entity being ticked --
+Details:
+	Entity Type: moremomostories:entity_rain (com.Hileb.silent_assassin.otherMods.SlashBlade.SA.Entity.EntityRain)
+	Entity ID: 430
+	Entity Name: entity.entity_rain.name
+	Entity's Exact location: -261.92, 84.68, -119.96
+	Entity's Block location: World: (-262,84,-120), Chunk: (at 10,5,8 in -17,-8; contains blocks -272,0,-128 to -257,255,-113), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Entity's Momentum: 0.00, -0.23, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:1931)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:643)
+
+-- Affected level --
+Details:
+	Level name: 新的世界
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 625 Drop: 0
+	Level seed: -5660747845971828097
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-228,64,-176), Chunk: (at 12,4,0 in -15,-11; contains blocks -240,0,-176 to -225,255,-161), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Level time: 464385 game time, 517237 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 32516 (now: false), thunder time: 33886 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:842)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:743)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:592)
+	at java.lang.Thread.run(Thread.java:750)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_333, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 544246912 bytes (519 MB) / 864550912 bytes (824 MB) up to 1881145344 bytes (1794 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.5.2768 10 mods loaded, 10 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State     | ID                    | Version      | Source                                | Signature |
+	|:--------- |:--------------------- |:------------ |:------------------------------------- |:--------- |
+	| UCHIJAAAA | minecraft             | 1.12.2       | minecraft.jar                         | None      |
+	| UCHIJAAAA | mcp                   | 9.42         | minecraft.jar                         | None      |
+	| UCHIJAAAA | FML                   | 8.0.99.99    | forgeSrc-1.12.2-14.23.5.2768.jar      | None      |
+	| UCHIJAAAA | forge                 | 14.23.5.2768 | forgeSrc-1.12.2-14.23.5.2768.jar      | None      |
+	| UCHIJAAAA | momostories           | 1.0.0        | momostories-1.0.1.jar                 | None      |
+	| UCHIJAAAA | moremomostories       | 1.0.1.8      | IdeallandFramework-master             | None      |
+	| UCHIJAAAA | magiccircle           | 1.0.1        | Magic_Circle-1.0.1.jar                | None      |
+	| UCHIJAAAA | flammpfeil.slashblade | mc1.12-r6    | SlashBlade-mc1.12-r6.jar              | None      |
+	| UCHIJAAAA | itemrender            | @VERSION@    | ItemRenderRebirth_V1.0.0_MC1.12.2.jar | None      |
+	| UCHIJAAAA | jei                   | 4.7.8.95     | jei_1.12.1-4.7.8.95.jar               | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 8; []
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
